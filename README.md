@@ -6,3 +6,8 @@ Members:
 - Jenna Van Conett
 - Alexandra Cooper
 - Albert Farhi
+
+##To-do:
+- Test JSON object contains all correct information with correct key names for existing controllers
+- User authentication with tokens
+- Continue to write tests using RSpec
