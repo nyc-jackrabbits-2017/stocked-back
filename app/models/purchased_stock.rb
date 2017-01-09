@@ -1,3 +1,4 @@
 class PurchasedStock < ApplicationRecord
-  belongs_to :user 
+  validates_presence_of :purchase_price, :quantity, :stock_symbol
+  belongs_to :user
 end
