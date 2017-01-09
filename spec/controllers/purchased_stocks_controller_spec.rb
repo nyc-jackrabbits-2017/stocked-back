@@ -9,5 +9,9 @@ RSpec.describe PurchasedStocksController, type: :controller do
       get :index, params: {user_id: user.id}
       expect(response).to have_http_status 200
     end
+    it "renders a json array of purchased_stocks" do
+      get :index, params: {user_id: user.id}
+      expect(JSON.parse(response.body).class).to eq Array
+    end
   end
 end
