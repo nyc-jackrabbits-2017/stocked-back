@@ -1,0 +1,2 @@
+class PurchasedStocksController < ApplicationController
+end
