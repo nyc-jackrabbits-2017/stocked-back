@@ -5,4 +5,5 @@ class PurchasedStock < ApplicationRecord
   def cost_basis
     self.purchase_price * self.quantity
   end
+
 end
