@@ -27,4 +27,10 @@ RSpec.describe PurchasedStocksController, type: :controller do
       expect(response.body).to include "cost_basis"
     end
   end
+  describe "POST #create" do
+    it "responds with a status code of 200" do
+      post :create, params: {user_id: user.id, purchased_stock: {purchase_price: 10.00, quantity: 150 , stock_symbol:"AF" }}
+      expect(response).to have_http_status 200
+    end
+  end
 end

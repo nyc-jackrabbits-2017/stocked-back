@@ -1,6 +1,17 @@
 class PurchasedStock < ApplicationRecord
   validates_presence_of :purchase_price, :quantity, :stock_symbol
+  validate :symbol_must_be_valid
   belongs_to :user
+
+
+  def symbol_must_be_valid
+    return unless self.stock_symbol
+    client = YahooFinance::Client.new
+    quote = client.quotes([self.stock_symbol], [:ask])
+    if quote.first.ask == "N/A"
+      errors.add(:stock_symbol, "does not exist")
+    end
+  end
 
   def cost_basis
     self.purchase_price * self.quantity

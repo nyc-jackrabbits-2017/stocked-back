@@ -11,4 +11,20 @@ class PurchasedStocksController < ApplicationController
     render json: @purchased_stock_json
   end
 
+  def create
+    @user = User.find(params[:user_id])
+    @purchased_stock = PurchasedStock.new(purchased_stock_params)
+    @purchased_stock.user = @user
+    if @purchased_stock.save
+      render json: {saved: true}
+    else
+      render json: {saved: false, errors: @purchased_stock.errors.full_messages}
+    end
+  end
+
+
+  def purchased_stock_params
+    params.require(:purchased_stock).permit(:purchase_price, :quantity, :stock_symbol)
+  end
+
 end
