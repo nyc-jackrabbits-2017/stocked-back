@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :purchased_stocks
+  validates :auth_token, uniqueness: true
 
 
   # Returns an array of portfolio values of last year's data month by month
