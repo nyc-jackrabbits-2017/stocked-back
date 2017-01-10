@@ -45,4 +45,12 @@ class PurchasedStock < ApplicationRecord
     quote.ask
   end
 
+  # Returns an array of purchased_stock values of last year's data month by month
+  def last_years_performance
+    client = YahooFinance::Client.new
+    quotes = client.historical_quotes(self.stock_symbol, {period: :monthly})
+    last_years_quotes = quotes.select {|quote| quote.trade_date.include?(1.year.ago.year.to_s)}
+    last_years_quotes.map {|quote| quote.close.to_f * quantity}.reverse
+  end
+
 end
