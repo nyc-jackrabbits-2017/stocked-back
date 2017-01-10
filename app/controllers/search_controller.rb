@@ -11,4 +11,11 @@ class SearchController < ApplicationController
     render json: current_data.ask
   end
 
+  def stock_history
+    client = YahooFinance::Client.new
+    data = client.historical_quotes(params[:stock_symbol],
+                                    {start_date: 2.year.ago, end_date: Time.now}
+                                    )
+    render json: data
+  end
 end
