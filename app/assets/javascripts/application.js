@@ -19,10 +19,13 @@ $(document).ready(function(){
   $('.user-form').on('submit', function(e) {
     e.preventDefault()
 
+    var data = $(e.target).serialize()
+    console.log(data)
+
     $.ajax({
       method: 'post',
-      url: '/api/users',
-      data: 'email=nas_wintheiser@ritchiesporer.org&password=password'
+      url: '/api/sessions',
+      data: $(e.target).serialize()
     })
     .done(function(r) {
       console.log(r)
