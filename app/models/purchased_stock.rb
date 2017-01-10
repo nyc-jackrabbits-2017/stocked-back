@@ -12,24 +12,24 @@ class PurchasedStock < ApplicationRecord
     portfolio = YahooFinance::Client.new
     stock = [self.stock_symbol]
 
-    returned_instance = portfolio.quotes(stock, [:name, :last_trade_date, :last_trade_time, :last_trade_price])
+    returned_instance = portfolio.quotes(stock, [:name, :last_trade_date, :last_trade_time, :last_trade_price, :ask])
     returned_instance[0]
   end
 
   # Call the api if it hasn't already been called, otherwise use returned values
   def quote
     @quote ||= quote_hash
-  end 
+  end
 
   # Return full company name
   def company_name
-    quote.name 
-  end 
+    quote.name
+  end
 
   # Return last trade date
   def last_trade_date
     quote.last_trade_date
-  end 
+  end
 
   #Return time of last trade date
   def last_trade_time
@@ -39,6 +39,10 @@ class PurchasedStock < ApplicationRecord
   # Return ask price of last trade
   def last_trade_price
     quote.last_trade_price
+  end
+
+  def ask
+    quote.ask
   end
 
 end
