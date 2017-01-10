@@ -1,24 +1,14 @@
-# README
+# Stocked
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Build Status](https://travis-ci.org/nyc-jackrabbits-2017/stocked-back.svg?branch=master)](https://travis-ci.org/nyc-jackrabbits-2017/stocked-back)
 
-Things you may want to cover:
+Members:
+- Jenna Van Conett
+- Alexandra Cooper
+- Albert Farhi
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##To-do:
+- Test JSON object contains all correct information with correct key names for existing controllers
+- User authentication with tokens
+- Continue to write tests using RSpec
+- Deploy to Heroku

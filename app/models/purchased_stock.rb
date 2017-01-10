@@ -6,6 +6,7 @@ class PurchasedStock < ApplicationRecord
     self.purchase_price * self.quantity
   end
 
+
   # Call the api and extract the stock info from the returned object
   def quote_hash
     portfolio = YahooFinance::Client.new
