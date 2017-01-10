@@ -11,5 +11,22 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs 
+//= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function(){
+
+  $('.user-form').on('submit', function(e) {
+    e.preventDefault()
+
+    $.ajax({
+      method: 'post',
+      url: '/api/users',
+      data: 'email=nas_wintheiser@ritchiesporer.org&password=password'
+    })
+    .done(function(r) {
+      console.log(r)
+    })
+  })
+
+})

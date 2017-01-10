@@ -13,4 +13,6 @@ Rails.application.routes.draw do
       resources :sessions, :only => [:create, :destroy]
     end
   end
+
+  get '/test/users', to: 'static#user_test'
 end
