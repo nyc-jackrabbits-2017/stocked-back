@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :purchased_stocks
+
+  # Returns an array of portfolio values of last year's data month by month
+  def last_year_portfolio_performance
+
+  end
 end
