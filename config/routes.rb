@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :users, only: [] do
     resources :purchased_stocks, only: [:index, :show]
+    get 'last_year_portfolio_performance' => 'portfolio#last_year_portfolio_performance'
   end
 end
