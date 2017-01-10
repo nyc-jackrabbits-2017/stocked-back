@@ -45,12 +45,31 @@ class PurchasedStock < ApplicationRecord
     quote.ask
   end
 
+
   # Returns an array of purchased_stock values of last year's data month by month
   def last_years_performance
     client = YahooFinance::Client.new
     quotes = client.historical_quotes(self.stock_symbol, {period: :monthly})
     last_years_quotes = quotes.select {|quote| quote.trade_date.include?(1.year.ago.year.to_s)}
     last_years_quotes.map {|quote| quote.close.to_f * quantity}.reverse
+
+  def serialize_purchase
+    self.to_json(
+      :include => [
+        :user => {
+          :only => [:id, :first_name, :last_name]
+        }
+      ],
+      :methods => [
+        :cost_basis,
+        :ask,
+        :company_name,
+        :last_trade_date,
+        :last_trade_time,
+        :last_trade_price
+      ]
+    )
+
   end
 
 end
