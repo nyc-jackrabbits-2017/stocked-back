@@ -32,4 +32,20 @@ $(document).ready(function(){
     })
   })
 
+  $('.new-form').on('submit', function(e) {
+    e.preventDefault()
+
+    var data = $(e.target).serialize()
+    console.log(data)
+
+    $.ajax({
+      method: 'post',
+      url: '/api/users',
+      data: $(e.target).serialize()
+    })
+    .done(function(r) {
+      console.log(r)
+    })
+  })
+
 })
