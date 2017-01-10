@@ -18,7 +18,7 @@ class PurchasedStocksController < ApplicationController
     if @purchased_stock.save
       render json: {saved: true}
     else
-      render json: {saved: false}
+      render json: {saved: false, errors: @purchased_stock.errors.full_messages}
     end
   end
 
