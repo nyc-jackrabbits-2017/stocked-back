@@ -52,6 +52,7 @@ class PurchasedStock < ApplicationRecord
     quotes = client.historical_quotes(self.stock_symbol, {period: :monthly})
     last_years_quotes = quotes.select {|quote| quote.trade_date.include?(1.year.ago.year.to_s)}
     last_years_quotes.map {|quote| quote.close.to_f * quantity}.reverse
+  end
 
   def serialize_purchase
     self.to_json(

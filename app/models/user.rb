@@ -31,13 +31,14 @@ class User < ApplicationRecord
           }
       ]
     )
+  end
 
-  private
-  def sum_for_each_month(performance_of_all_stocks)
-    monthly_values = performance_of_all_stocks.transpose
-    monthly_values.map do |monthly_value|
-      monthly_value.reduce(0) {|value, sum| value + sum}
-   end
+    private
+    def sum_for_each_month(performance_of_all_stocks)
+      monthly_values = performance_of_all_stocks.transpose
+      monthly_values.map do |monthly_value|
+        monthly_value.reduce(0) {|value, sum| value + sum}
+    end
 
   end
 
