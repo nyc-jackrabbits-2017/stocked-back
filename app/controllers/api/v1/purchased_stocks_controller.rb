@@ -1,4 +1,6 @@
 class Api::V1::PurchasedStocksController < ApplicationController
+  before_action :authenticate_with_token!, only: [:create]
+  respond_to :json
 
   def index
     @user = User.find(params[:user_id])

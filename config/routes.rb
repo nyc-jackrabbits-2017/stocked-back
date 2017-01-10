@@ -10,6 +10,7 @@ Rails.application.routes.draw do
         resources :purchased_stocks, only: [:index, :show]
         get 'last_year_portfolio_performance' => 'portfolio#last_year_portfolio_performance'
       end
+      resources :sessions, :only => [:create, :destroy]
     end
   end
 end
