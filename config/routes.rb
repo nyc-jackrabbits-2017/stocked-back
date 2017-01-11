@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :api, defaults: {format: :json} do
-    scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
+    scope module: :v1 do
 
       get '/search/stocks/:stock_symbol/history' => 'search#stock_history'
       get '/search/stocks/:stock_symbol' => 'search#stock_search'
