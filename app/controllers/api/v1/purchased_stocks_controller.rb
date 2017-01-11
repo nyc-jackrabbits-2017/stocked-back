@@ -1,5 +1,5 @@
 class Api::V1::PurchasedStocksController < ApplicationController
-  before_action :authenticate_with_token!, only: [:create]
+  before_action :authenticate_with_token!, only: []
   respond_to :json
 
   def index

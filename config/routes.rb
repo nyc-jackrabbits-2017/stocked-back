@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       get '/search/:query' => 'search#symbol_search'
 
       resources :users, only: [:show, :create, :update, :destroy] do
-        resources :purchased_stocks, only: [:index, :show]
+        resources :purchased_stocks, only: [:index, :show, :create]
         get 'last_year_portfolio_performance' => 'portfolio#last_year_portfolio_performance'
       end
 
