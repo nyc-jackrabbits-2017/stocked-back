@@ -1,4 +1,4 @@
-class SearchController < ApplicationController
+class Api::V1::SearchController < ApplicationController
 
   def symbol_search
     results = Net::HTTP.get('chstocksearch.herokuapp.com', "/api/#{params[:query]}")
