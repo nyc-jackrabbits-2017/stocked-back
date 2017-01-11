@@ -1,1 +1,25 @@
-<h1>Hello World</h1>
+<div class="container">
+  <h1>Hello World</h1>
+
+
+</div>
+GET    /
+
+GET    /api/search/stocks/:stock_symbol/history
+GET    /api/search/stocks/:stock_symbol
+GET    /api/search/:query
+
+GET    /api/users/:user_id/purchased_stocks
+POST   /api/users/:user_id/purchased_stocks
+GET    /api/users/:user_id/purchased_stocks/:id
+
+GET    /api/users/:user_id/last_year_portfolio_performance
+
+POST   /api/users
+GET    /api/users/:id
+PATCH  /api/users/:id
+PUT    /api/users/:id
+DELETE /api/users/:id
+
+POST   /api/sessions
+DELETE /api/sessions/:id
