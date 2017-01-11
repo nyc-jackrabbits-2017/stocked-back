@@ -1,0 +1,29 @@
+<div>
+  <h3>Stock Queries</h3>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th class="col-md-5">Description</th>
+        <th class="col-md-1">Action</th>
+        <th class="col-md-6">Route</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Stock History(2-year period)</strong></td>
+        <td>GET</td>
+        <td>/api/search/stocks/<strong>:stock_symbol</strong>/history</td>
+      </tr>
+      <tr>
+        <td><strong>Current Ask Price</strong></td>
+        <td>GET</td>
+        <td>/api/search/stocks/<strong>:stock_symbol</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Search for symbol by title</strong></td>
+        <td>GET</td>
+        <td>/api/search/<strong>:query</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -3,6 +3,8 @@ require 'api_constraints'
 Rails.application.routes.draw do
   devise_for :users
 
+  root to: 'static#index'
+
   namespace :api, defaults: {format: :json} do
     scope module: :v1 do
 
@@ -20,6 +22,5 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/test/users', to: 'static#user_test'
 
 end
