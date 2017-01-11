@@ -14,7 +14,7 @@ register<br>
 </form>
 <br><br>
 
-<form class="logoutbtn" action="/api/session/1" method="post">
+<form class="logoutbtn" action="/api/sessions/{auth_token}" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" name="" value="LOGOUT">
 </form>
