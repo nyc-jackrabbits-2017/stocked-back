@@ -1,0 +1,29 @@
+<div>
+  <h3>Purchased Stocks (**requires authentication**)</h3>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Action</th>
+        <th>Route</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Stocks that a user Purchased</strong></td>
+        <td>GET</td>
+        <td>/api/users/<strong>:user_id</strong>/purchased_stocks</td>
+      </tr>
+      <tr>
+        <td><strong>Make a new Stock Purchase</strong></td>
+        <td>POST</td>
+        <td>/api/users/<strong>:user_id</strong>/purchased_stocks</td>
+      </tr>
+      <tr>
+        <td><strong>Data for a specific purchased_stock</strong></td>
+        <td>GET</td>
+        <td>/api/users/<strong>:user_id</strong>/purchased_stocks/<strong>:id</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
