@@ -48,4 +48,11 @@ $(document).ready(function(){
     })
   })
 
+  $.ajax({
+    url: '/api/users/1/purchased_stocks'
+  })
+  .done(function(r) {
+    $('.new-form').append(r)
+  })
+
 })
